@@ -2,20 +2,56 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>Wavees Documentation</title>
+
+  <!-- Some Meta settings -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  
+  <!-- Styles -->
   <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
 </head>
 <body>
+  <!-- Navigation bar -->
+  <nav>
+    <a href="#/en/">English</a>
+    <a href="#/ru/">Русский</a>
+  </nav>
+
+  <!-- App container -->
   <div id="app"></div>
+
+  <!-- Docsify settings -->
   <script>
+    // Let's now register our service worker.
+    if (typeof navigator.serviceWorker !== 'undefined') {
+      navigator.serviceWorker.register('sw.js')
+    }
+
+    // All Docsify settings.
     window.$docsify = {
       name: '',
-      repo: ''
+      repo: 'https://github.com/wavees/documentation/',
+
+      // Sidebar settings
+      loadSidebar: true,
+
+      // FallbackLanguages.
+      fallbackLanguages: ["ru", "en"],
+
+      // CoverPage settings and configuration.
+      coverpage: true,
+
+      // Plugins
+      plugins: [
+      ]
     }
   </script>
+
+  <!-- Importing scripts and plugins -->
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
 </body>
 </html>
